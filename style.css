@@ -1,8 +1,15 @@
 * {
-    border: solid lightblue;
+    box-sizing: border-box;
 }
 
-#container-grid {
+#grid-container {
+    border: 1px solid;
     width: 500px;
     height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#grid-container div {
+    border: 0.5px solid lightblue;
 }
