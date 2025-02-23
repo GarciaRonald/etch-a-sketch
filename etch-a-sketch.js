@@ -27,6 +27,20 @@ const createGrid = gridSize => {
             if (!randomColor) {
                 gridCell.style.backgroundColor = "rgb(0, 0, 255)";
                 gridCell.style.opacity = "1";
+            } else {
+                const rC = Math.floor(Math.random() * 255);
+                const gC = Math.floor(Math.random() * 255);
+                const bC = Math.floor(Math.random() * 255);
+                const opac = gridCell.style.opacity;
+                gridCell.style.backgroundColor = `rgb(${rC}, ${gC}, ${bC})`;
+                if (opac === "1") {
+                    return;
+                }
+                if (opac && parseFloat(opac) < 1) {
+                    gridCell.style.opacity = `${parseFloat(opac) + 0.1}`;
+                } else {
+                    gridCell.style.opacity = "0.1";
+                }
             }
         });
     }
